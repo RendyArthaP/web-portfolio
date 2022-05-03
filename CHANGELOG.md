@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.1.3](https://github.com/RendyArthaP/web-portfolio/compare/v0.1.2...v0.1.3) (2022-05-03)
+
+
+### Features
+
+* add settings at repo for vs code ([2de87c3](https://github.com/RendyArthaP/web-portfolio/commit/2de87c3bf45eeae7423d3cff71375dfaeb4844cb))
+
 ### [0.1.2](https://github.com/RendyArthaP/web-portfolio/compare/v0.1.1...v0.1.2) (2022-05-03)
 
 
