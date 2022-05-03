@@ -1,3 +1,14 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+body {
+  background-color: #4F5D75;
+  font-family: 'Poppins', sans-serif;
+  color: #BFC0C0;
+}
+
+h1 h2 h3 h4 h5 h6 {
+  font-family: 'Nunito', sans-serif;
+  color: #FFFFFF;
+}
