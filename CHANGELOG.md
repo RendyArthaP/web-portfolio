@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.1.7](https://github.com/RendyArthaP/web-portfolio/compare/v0.1.6...v0.1.7) (2022-05-04)
+
+
+### Features
+
+* navbar web version activate ([fba075b](https://github.com/RendyArthaP/web-portfolio/commit/fba075b8d118a45b4c1885b17b0977f5af3b6015))
+
 ### [0.1.6](https://github.com/RendyArthaP/web-portfolio/compare/v0.1.5...v0.1.6) (2022-05-04)
 
 
