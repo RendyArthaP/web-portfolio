@@ -3,12 +3,30 @@
 @tailwind utilities;
 
 body {
-  background-color: #4F5D75;
+  background-color: #2D3142;
   font-family: 'Poppins', sans-serif;
   color: #BFC0C0;
+  margin: 0;
+  padding: 0;
+  height: 100%;
 }
 
 h1 h2 h3 h4 h5 h6 {
   font-family: 'Nunito', sans-serif;
   color: #FFFFFF;
+}
+
+::-webkit-scrollbar {
+  display: none;
+}
+
+main {
+  position: relative;
+  display: block;
+  width: 100%;
+  min-height: 100vh;
+  margin: auto;
+  max-width: 1152px;
+  padding: 16px;
+  overflow:hidden;
 }

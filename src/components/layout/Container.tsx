@@ -1,7 +1,11 @@
-import React from "react";
+import React, { FC, ReactNode } from "react";
 
-const Container = () => {
-  return <div>Container</div>;
+interface Props {
+  children: ReactNode;
+}
+
+const Container: FC<Props> = ({ children }) => {
+  return <main>{children}</main>;
 };
 
 export default Container;
