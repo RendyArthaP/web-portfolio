@@ -1,8 +1,23 @@
-import Image from "next/image";
 import React, { FC, ReactNode } from "react";
-import Logo from "~/public/Logo.png";
-import Link from "next/link";
-import { Hamburger } from "~/public/Hamburger";
+import HomeInactive from "~/public/icons/tabbar/inactive/home-inactive.svg";
+import AboutInactive from "~/public/icons/tabbar/inactive/about-inactive.svg";
+import BlogsInactive from "~/public/icons/tabbar/inactive/blogs-inactive.svg";
+import PortfolioInactive from "~/public/icons/tabbar/inactive/portfolio-inactive.svg";
+import HomeActivate from "~/public/icons/tabbar/active/home-active.svg";
+import AboutActivate from "~/public/icons/tabbar/active/about-active.svg";
+import BlogsActivate from "~/public/icons/tabbar/active/blogs-active.svg";
+import PortfolioActivate from "~/public/icons/tabbar/active/portfolio-active.svg";
+import { useRouter } from "next/router";
+import Navbar from "../Navbar";
+import Tabbar from "../Tabbar/Tabbar";
+import TabbarItem from "../Tabbar/TabbarItem";
+import { tabbarActive } from "../../utils/tabbarActive";
+import {
+  activeHome,
+  activeAbout,
+  activeBlogs,
+  activePortfolio,
+} from "../../constants/activeTabbar";
 import Container from "./Container";
 
 interface Props {
@@ -10,36 +25,44 @@ interface Props {
 }
 
 const Layout: FC<Props> = ({ children }) => {
+  const router = useRouter();
+  const pathLocation = router.pathname;
+
   return (
     <div>
       <header>
         <div>
-          <div className="flex flex-row items-center justify-between p-4 mx-auto max-w-6xl">
-            <div>
-              <Link href="/">
-                <a className="outline-none">
-                  <Image alt="Logo" height={45} src={Logo} width={45} />
-                </a>
-              </Link>
-            </div>
-            <div className="hidden md:flex md:flex-row">
-              <Link href="/">
-                <span className="mx-4">Home</span>
-              </Link>
-              <Link href="/">
-                <span className="mx-4">About</span>
-              </Link>
-              <Link href="/">
-                <span className="mx-4">Blogs</span>
-              </Link>
-              <Link href="/">
-                <span className="ml-4">Portfolio</span>
-              </Link>
-            </div>
-            <div className="flex md:hidden">
-              <Hamburger />
-            </div>
-          </div>
+          <Navbar />
+          <Tabbar>
+            <TabbarItem
+              active={tabbarActive(pathLocation, activeHome)}
+              iconActive={HomeActivate}
+              iconInactive={HomeInactive}
+              router="/"
+              title="Home"
+            />
+            <TabbarItem
+              active={tabbarActive(pathLocation, activeAbout)}
+              iconActive={AboutActivate}
+              iconInactive={AboutInactive}
+              router="/about"
+              title="About"
+            />
+            <TabbarItem
+              active={tabbarActive(pathLocation, activeBlogs)}
+              iconActive={BlogsActivate}
+              iconInactive={BlogsInactive}
+              router="/blogs"
+              title="Blogs"
+            />
+            <TabbarItem
+              active={tabbarActive(pathLocation, activePortfolio)}
+              iconActive={PortfolioActivate}
+              iconInactive={PortfolioInactive}
+              router="/portfolio"
+              title="Portfolio"
+            />
+          </Tabbar>
         </div>
       </header>
       <Container>{children}</Container>
