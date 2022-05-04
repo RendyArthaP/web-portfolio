@@ -8,7 +8,7 @@ import AboutActivate from "~/public/icons/tabbar/active/about-active.svg";
 import BlogsActivate from "~/public/icons/tabbar/active/blogs-active.svg";
 import PortfolioActivate from "~/public/icons/tabbar/active/portfolio-active.svg";
 import { useRouter } from "next/router";
-import Navbar from "../Navbar";
+import Navbar from "../Navbar/Navbar";
 import Tabbar from "../Tabbar/Tabbar";
 import TabbarItem from "../Tabbar/TabbarItem";
 import { tabbarActive } from "../../utils/tabbarActive";
@@ -26,7 +26,7 @@ interface Props {
 
 const Layout: FC<Props> = ({ children }) => {
   const router = useRouter();
-  const pathLocation = router.pathname;
+  const routerPath = router.pathname;
 
   return (
     <div>
@@ -35,32 +35,32 @@ const Layout: FC<Props> = ({ children }) => {
           <Navbar />
           <Tabbar>
             <TabbarItem
-              active={tabbarActive(pathLocation, activeHome)}
+              active={tabbarActive(routerPath, activeHome)}
               iconActive={HomeActivate}
               iconInactive={HomeInactive}
               router="/"
               title="Home"
             />
             <TabbarItem
-              active={tabbarActive(pathLocation, activeAbout)}
+              active={tabbarActive(routerPath, activeAbout)}
               iconActive={AboutActivate}
               iconInactive={AboutInactive}
               router="/about"
               title="About"
             />
             <TabbarItem
-              active={tabbarActive(pathLocation, activeBlogs)}
+              active={tabbarActive(routerPath, activeBlogs)}
               iconActive={BlogsActivate}
               iconInactive={BlogsInactive}
               router="/blogs"
               title="Blogs"
             />
             <TabbarItem
-              active={tabbarActive(pathLocation, activePortfolio)}
+              active={tabbarActive(routerPath, activePortfolio)}
               iconActive={PortfolioActivate}
               iconInactive={PortfolioInactive}
               router="/portfolio"
-              title="Portfolio"
+              title="Projects"
             />
           </Tabbar>
         </div>

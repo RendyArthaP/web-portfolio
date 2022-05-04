@@ -19,11 +19,11 @@ const TabbarItem: FC<TabbarItemProps> = ({
 }) => {
   return (
     <Link href={router}>
-      <div className="flex flex-col cursor-pointer">
+      <div className="flex flex-col mx-2 cursor-pointer">
         <Image alt="Logo Home" src={active ? iconActive : iconInactive} />
         <span
           className={
-            active ? "text-sm mt-1 font-bold" : "text-sm mt-1 font-normal"
+            active ? "text-xs mt-1 font-bold" : "text-xs mt-1 font-normal"
           }
         >
           {title}
