@@ -49,7 +49,7 @@ const Navbar = () => {
         />
         <NavbarItem
           router="/portfolio"
-          title="Projects"
+          title="Portfolio"
           classNameActive="ml-4 font-bold"
           classNameInactive="ml-4 font-normal"
           active={tabbarActive(routerPath, activePortfolio)}

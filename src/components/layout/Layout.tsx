@@ -60,7 +60,7 @@ const Layout: FC<Props> = ({ children }) => {
               iconActive={PortfolioActivate}
               iconInactive={PortfolioInactive}
               router="/portfolio"
-              title="Projects"
+              title="Portfolio"
             />
           </Tabbar>
         </div>
