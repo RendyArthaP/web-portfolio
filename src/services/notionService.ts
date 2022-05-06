@@ -41,13 +41,12 @@ export const getPublishedDetailBlogs = async (slug: string) => {
       }
     }
   })
-
   const detailBlogsPages = response.results[0];
-
-  const markdownBlocks = await blocksMarkdown.pageToMarkdown(detailBlogsPages.id)
+  const markdownBlocks = await blocksMarkdown.pageToMarkdown(detailBlogsPages.id);
+  const markdown = blocksMarkdown.toMarkdownString(markdownBlocks);
 
   return {
     detailBlogsPages,
-    markdownBlocks
+    markdown
   }
 }
