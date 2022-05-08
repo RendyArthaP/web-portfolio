@@ -7,6 +7,7 @@ import dayjs from "dayjs";
 import React from "react";
 import { getPublishedBlogs } from "~/src/services/notionService";
 import Link from "next/link";
+import { colorConverter } from "~/src/constants/tagsColors";
 
 const Blogs: NextPage = ({
   getBlogs
@@ -15,7 +16,6 @@ const Blogs: NextPage = ({
   return (
     <div className="flex flex-wrap mx-auto w-full pb-24">
       {getBlogs.map((blog) => {
-        console.log(blog);
         return (
           <div
             key={blog.id}
@@ -32,9 +32,28 @@ const Blogs: NextPage = ({
               <h1 className="text-white font-bold font-nunito text-xl tracking-normal">
                 {blog.properties?.title?.title[0]?.text?.content}
               </h1>
-              <p className="text-grey font-poppins text-sm">
-                {blog.properties?.description?.rich_text[0]?.plain_text.slice(0,120)}...
-              </p>
+              {blog.properties?.description?.rich_text.length > 0 && (
+                <p className="text-grey font-poppins text-sm">
+                  {blog.properties?.description?.rich_text[0]?.plain_text.slice(0,120)}...
+                </p>
+              )}
+              {blog.properties?.tags?.multi_select.length > 0 && (
+                <div className="flex flex-row mt-4 overflow-y-scroll">
+                  {blog.properties?.tags?.multi_select?.map((tags) => {
+                    return (
+                      <div
+                        className="rounded-md p-1 mr-2"
+                        style={{backgroundColor: colorConverter(tags.color)}}
+                        key={tags.id}
+                      >
+                        <p className="text-white font-poppins text-sm">
+                          {tags.name}
+                        </p>
+                      </div>
+                    )
+                  })}
+                </div>
+              )}
               <Link href={`/blogs/${blog.properties?.slug?.formula?.string}`}>
                 <a className="text-white font-normal mt-4 tracking-tight">
                   Read More {">>"}
