@@ -3,24 +3,44 @@ import {
   InferGetStaticPropsType,
   NextPage
 } from "next";
-import Link from "next/link";
+import dayjs from "dayjs";
 import React from "react";
 import { getPublishedBlogs } from "~/src/services/notionService";
+import Link from "next/link";
 
 const Blogs: NextPage = ({
   getBlogs
 }: InferGetStaticPropsType<typeof getStaticProps>) => {
 
   return (
-    <div>
+    <div className="flex flex-wrap mx-auto w-full pb-24">
       {getBlogs.map((blog) => {
+        console.log(blog);
         return (
-          <div key={blog.id}>
-            <Link href={`/blogs/${blog.properties?.slug?.formula?.string}`}>
-              <h1>
+          <div
+            key={blog.id}
+            className="bg-dark-blue m-4 rounded-lg w-full max-w-xs overflow-hidden"
+          >
+            <img
+              src={blog.properties?.images?.files[0]?.file?.url}
+              className="rounded-t-lg h-56 lg:h-60 w-full object-cover"
+            />
+            <div className="p-3 flex flex-col">
+              <span className="text-grey font-poppins text-sm mb-1">
+                {dayjs(blog.properties?.dates?.date?.start).format('MMMM D, YYYY')}
+              </span>
+              <h1 className="text-white font-bold font-nunito text-xl tracking-normal">
                 {blog.properties?.title?.title[0]?.text?.content}
               </h1>
-            </Link>
+              <p className="text-grey font-poppins text-sm">
+                {blog.properties?.description?.rich_text[0]?.plain_text.slice(0,120)}...
+              </p>
+              <Link href={`/blogs/${blog.properties?.slug?.formula?.string}`}>
+                <a className="text-white font-normal mt-4 tracking-tight">
+                  Read More {">>"}
+                </a>
+              </Link>
+            </div>
           </div>
         )
       })}

@@ -30,6 +30,7 @@
     "@types/react-dom": "18.0.3",
     "@typescript-eslint/parser": "^5.22.0",
     "autoprefixer": "^10.4.7",
+    "dayjs": "^1.11.2",
     "eslint": "8.14.0",
     "eslint-config-kentcdodds": "^20.2.0",
     "eslint-config-next": "12.1.6",
