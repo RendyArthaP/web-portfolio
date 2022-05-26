@@ -13,7 +13,6 @@ const BlogsDetail = ({
   markdown,
   blogDetails
 }: InferGetStaticPropsType<typeof getStaticProps>) => {
-  console.log(blogDetails);
   return (
     <div>
       <Head>
