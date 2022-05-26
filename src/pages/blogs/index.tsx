@@ -7,7 +7,7 @@ import dayjs from "dayjs";
 import React from "react";
 import { getPublishedBlogs } from "~/src/services/notionService";
 import Link from "next/link";
-import { colorConverter } from "~/src/constants/tagsColors";
+import { colorConverter } from "~/src/utils/tagsColors";
 
 const Blogs: NextPage = ({
   getBlogs
