@@ -8,6 +8,7 @@ import React from "react";
 import { getPublishedBlogs } from "~/src/services/notionService";
 import Link from "next/link";
 import { colorConverter } from "~/src/utils/tagsColors";
+import { BlogCards } from "~/src/types/schema";
 
 const Blogs: NextPage = ({
   getBlogs
@@ -15,7 +16,7 @@ const Blogs: NextPage = ({
 
   return (
     <div className="flex flex-wrap mx-auto w-full pb-24">
-      {getBlogs.map((blog) => {
+      {getBlogs.map((blog: BlogCards) => {
         return (
           <div
             key={blog.id}
