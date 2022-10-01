@@ -4,8 +4,10 @@ import {
   NextPage
 } from "next";
 import { getPublishedBlogs } from "~/src/services/notionService";
-import { BlogCards } from "~/src/types/schema";
+import { BlogCards } from "~/src/pages/blogs/types/blogcard";
 import CardBlogs from "./components/CardBlogs/CardBlogs";
+import dayjs from "dayjs";
+import Link from "next/link";
 
 const Blogs: NextPage = ({
   getBlogs
@@ -15,10 +17,9 @@ const Blogs: NextPage = ({
     <div>
       {getBlogs.map((blog: BlogCards) => {
         return (
-          <CardBlogs
-            id={blog.id}
-            properties={blog.properties}
-          />
+          <div key={blog.id}>
+            <CardBlogs properties={blog.properties} />
+          </div>
         )
       })}
     </div>

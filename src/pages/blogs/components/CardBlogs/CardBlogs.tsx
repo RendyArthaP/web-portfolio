@@ -1,17 +1,13 @@
 import dayjs from 'dayjs'
 import Link from 'next/link'
 import React, { FC } from 'react'
-import { BlogCards } from '~/src/types/schema'
+import { BlogCards } from "~/src/pages/blogs/types/blogcard";
 
 const CardBlogs: FC<BlogCards> = ({
-  id,
   properties
 }) => {
   return (
-    <div
-      key={id}
-      className="mx-4 my-8 border border-[#BFC0C0] rounded-lg"
-    >
+    <div className="mx-4 my-8 border border-[#BFC0C0] rounded-lg">
       <div className="flex flex-col sm:flex-row">
         <img
           src={properties?.images?.files[0]?.file?.url}
