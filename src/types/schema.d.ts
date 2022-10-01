@@ -16,7 +16,7 @@ export interface BlogCards {
     title: {
       title: {
         text: {
-          content?: string
+          content?: string;
         };
       }[];
     };
@@ -32,4 +32,4 @@ export interface BlogCards {
       };
     };
   };
-};
+}
