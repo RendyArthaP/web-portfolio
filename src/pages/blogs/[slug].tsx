@@ -1,6 +1,5 @@
-import { GetStaticProps, InferGetStaticPropsType } from 'next';
+import React from "react";import { GetStaticProps, InferGetStaticPropsType } from 'next';
 import { ParsedUrlQuery } from 'querystring';
-import React from 'react'
 import { getPublishedDetailBlogs, getPublishedBlogs } from '~/src/services/notionService';
 import ReactMarkdown from "react-markdown";
 import Head from 'next/head';

@@ -29,29 +29,29 @@ const Navbar = () => {
         <NavbarItem
           router="/"
           title="Home"
-          classNameActive="mx-4 font-bold"
-          classNameInactive="mx-4 font-normal"
+          classNameActive="mx-4 font-bold cursor-pointer"
+          classNameInactive="mx-4 font-normal cursor-pointer"
           active={tabbarActive(routerPath, activeHome)}
         />
         <NavbarItem
           router="/about"
           title="About"
-          classNameActive="mx-4 font-bold"
-          classNameInactive="mx-4 font-normal"
+          classNameActive="mx-4 font-bold cursor-pointer"
+          classNameInactive="mx-4 font-normal cursor-pointer"
           active={tabbarActive(routerPath, activeAbout)}
         />
         <NavbarItem
           router="/blogs"
           title="Blogs"
-          classNameActive="mx-4 font-bold"
-          classNameInactive="mx-4 font-normal"
+          classNameActive="mx-4 font-bold cursor-pointer"
+          classNameInactive="mx-4 font-normal cursor-pointer"
           active={tabbarActive(routerPath, activeBlogs)}
         />
         <NavbarItem
           router="/portfolio"
           title="Portfolio"
-          classNameActive="ml-4 font-bold"
-          classNameInactive="ml-4 font-normal"
+          classNameActive="ml-4 font-bold cursor-pointer"
+          classNameInactive="ml-4 font-normal cursor-pointer"
           active={tabbarActive(routerPath, activePortfolio)}
         />
       </div>

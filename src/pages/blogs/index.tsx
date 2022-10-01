@@ -4,7 +4,6 @@ import {
   NextPage
 } from "next";
 import dayjs from "dayjs";
-import React from "react";
 import { getPublishedBlogs } from "~/src/services/notionService";
 import Link from "next/link";
 import { colorConverter } from "~/src/utils/tagsColors";
@@ -15,57 +14,46 @@ const Blogs: NextPage = ({
 }: InferGetStaticPropsType<typeof getStaticProps>) => {
 
   return (
-    <div className="flex flex-wrap mx-auto w-full pb-16">
+    <div>
       {getBlogs.map((blog: BlogCards) => {
         return (
           <div
             key={blog.id}
-            className="bg-dark-blue m-4 rounded-lg w-full max-w-xs overflow-hidden"
+            className="mx-4 my-8 border border-[#BFC0C0] rounded-lg"
           >
-            <img
-              src={blog.properties?.images?.files[0]?.file?.url}
-              className="rounded-t-lg h-56 lg:h-60 w-full object-cover"
-            />
-            <div className="p-3 flex flex-col">
-              <span className="text-grey font-poppins text-sm mb-1">
-                {dayjs(blog.properties?.dates?.date?.start).format('MMMM D, YYYY')}
-              </span>
-              <h1 className="text-white font-bold font-nunito text-xl tracking-normal">
-                {blog.properties?.title?.title[0]?.text?.content}
-              </h1>
-              {blog.properties?.description?.rich_text.length > 0 && (
-                <p className="text-grey font-poppins text-sm">
-                  {blog.properties?.description?.rich_text[0]?.plain_text.slice(0,120)}...
-                </p>
-              )}
-              {blog.properties?.tags?.multi_select.length > 0 && (
-                <div className="flex flex-row mt-4 overflow-y-scroll">
-                  {blog.properties?.tags?.multi_select?.map((tags) => {
-                    return (
-                      <div
-                        className="rounded-md p-1 mr-2"
-                        style={{backgroundColor: colorConverter(tags.color)}}
-                        key={tags.id}
-                      >
-                        <p className="text-white font-poppins text-sm">
-                          {tags.name}
-                        </p>
-                      </div>
-                    )
-                  })}
+            <div className="flex flex-col sm:flex-row">
+              <img
+                src={blog.properties?.images?.files[0]?.file?.url}
+                className="flex rounded-t-lg md:rounded-lg md:rounded-tr-none md:rounded-br-none  h-60 w-full md:max-w-[220px]"
+              />
+              <div className="p-4 flex flex-col justify-between h-60">
+                <div>
+                  <h1 className="text-white font-bold font-nunito text-xl tracking-normal -mb-[7px]">
+                    {blog.properties?.title?.title[0]?.text?.content}
+                  </h1>
+                  <span className="text-grey font-poppins text-xs mb-1">
+                    {dayjs(blog.properties?.dates?.date?.start).format('MMMM D, YYYY')}
+                  </span>
                 </div>
-              )}
-              <Link href={`/blogs/${blog.properties?.slug?.formula?.string}`}>
-                <a className="text-white font-normal mt-4 tracking-tight">
-                  Read More {">>"}
-                </a>
-              </Link>
+                <div className="my-4">
+                  {blog.properties?.description?.rich_text.length > 0 && (
+                    <p className="text-grey font-poppins text-sm select-none">
+                      {blog.properties?.description?.rich_text[0]?.plain_text.slice(0,200)}...
+                    </p>
+                  )}
+                </div>
+                <Link href={`/blogs/${blog.properties?.slug?.formula?.string}`}>
+                  <a className="text-white font-normal mt-1 tracking-tight outline-none w-28">
+                    Read More {">>"}
+                  </a>
+                </Link>
+              </div>
             </div>
           </div>
         )
       })}
     </div>
-  );
+  )
 };
 
 export default Blogs;
