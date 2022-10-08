@@ -13,7 +13,7 @@ const CardBlogs: FC<BlogCards> = ({
           src={properties?.images?.files[0]?.file?.url}
           className="flex rounded-t-lg sm:rounded-lg sm:rounded-tr-none sm:rounded-br-none h-60 sm:max-w-[220px]"
         />
-        <div className="p-4 flex flex-col justify-between h-60">
+        <div className="p-4 flex flex-col justify-between sm:h-60">
           <div>
             <h1 className="text-white font-bold font-nunito text-xl tracking-normal -mb-[7px]">
               {properties?.title?.title[0]?.text?.content}
@@ -22,10 +22,10 @@ const CardBlogs: FC<BlogCards> = ({
               {dayjs(properties?.dates?.date?.start).format('MMMM D, YYYY')}
             </span>
           </div>
-          <div>
+          <div className=''>
             {properties?.description?.rich_text.length > 0 && (
               <p className="text-grey font-poppins text-sm select-none">
-                {properties?.description?.rich_text[0]?.plain_text.slice(0,400)}...
+                {properties?.description?.rich_text[0]?.plain_text.slice(0,300)}...
               </p>
             )}
           </div>

@@ -6,8 +6,6 @@ import {
 import { getPublishedBlogs } from "~/src/services/notionService";
 import { BlogCards } from "~/src/pages/blogs/types/blogcard";
 import CardBlogs from "./components/CardBlogs/CardBlogs";
-import dayjs from "dayjs";
-import Link from "next/link";
 
 const Blogs: NextPage = ({
   getBlogs
