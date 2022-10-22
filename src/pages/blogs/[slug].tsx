@@ -3,6 +3,7 @@ import { ParsedUrlQuery } from 'querystring';
 import { getPublishedDetailBlogs, getPublishedBlogs } from '~/src/services/notionService';
 import ReactMarkdown from "react-markdown";
 import Head from 'next/head';
+import { BlogCards } from "./types/blogcard";
 
 interface IParams extends ParsedUrlQuery {
   slug: string
@@ -12,6 +13,7 @@ const BlogsDetail = ({
   markdown,
   blogDetails
 }: InferGetStaticPropsType<typeof getStaticProps>) => {
+
   return (
     <div>
       <Head>
@@ -45,9 +47,10 @@ export const getStaticProps: GetStaticProps = async (context) => {
 
 export const getStaticPaths = async () => {
   const getBlogs = await getPublishedBlogs();
-  const paths = getBlogs.map((blog) => ({
+  // @ts-ignore
+  const paths = getBlogs.map((blog: BlogCards) => ({
     params: {
-      slug: blog?.id
+      slug: blog?.properties?.slug?.formula?.string
     }
   }))
 
