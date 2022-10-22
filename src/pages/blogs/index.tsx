@@ -14,9 +14,10 @@ const Blogs: NextPage = ({
   return (
     <div>
       {getBlogs.map((blog: BlogCards) => {
+        console.log(blog)
         return (
-          <div key={blog.id}>
-            <CardBlogs properties={blog.properties} />
+          <div key={blog?.id}>
+            <CardBlogs properties={blog?.properties} />
           </div>
         )
       })}

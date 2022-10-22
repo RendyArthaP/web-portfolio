@@ -11,13 +11,12 @@ import { PortfolioCards } from "./types/portfoliocard";
 const Portfolio: NextPage = ({
   getPortfolio
 }: InferGetStaticPropsType<typeof getStaticProps>) => {
-  console.log(getPortfolio);
   return (
     <div>
       {getPortfolio.map((portfolio: PortfolioCards) => {
         return (
-          <div key={portfolio.id}>
-            <CardPortfolio properties={portfolio.properties} />
+          <div key={portfolio?.id}>
+            <CardPortfolio properties={portfolio?.properties} />
           </div>
         )
       })}
