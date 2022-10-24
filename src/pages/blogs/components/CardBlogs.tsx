@@ -7,7 +7,7 @@ const CardBlogs: FC<BlogCards> = ({
   properties
 }) => {
   return (
-    <div className="mx-4 my-8 bg-dark-blue border border-dark-blue rounded-lg w-full max-w-[280px]">
+    <div className="sm:mx-4 my-8 bg-dark-blue border border-dark-blue rounded-lg w-full sm:max-w-[288px] lg:max-w-[255px]">
       <div className="flex flex-col">
         <img
           src={properties?.images?.files[0]?.file?.url}
