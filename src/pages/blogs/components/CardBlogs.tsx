@@ -7,13 +7,13 @@ const CardBlogs: FC<BlogCards> = ({
   properties
 }) => {
   return (
-    <div className="sm:mx-4 my-8 bg-dark-blue border border-dark-blue rounded-lg w-full sm:max-w-[288px] lg:max-w-[255px]">
+    <div className="sm:mx-4 my-8 bg-dark-blue border border-dark-blue rounded-lg h-[26.5rem]">
       <div className="flex flex-col">
         <img
           src={properties?.images?.files[0]?.file?.url}
-          className="flex rounded-tr-lg rounded-tl-lg h-48 object-cover"
+          className="flex rounded-tr-lg rounded-tl-lg h-48 object-cover w-full"
         />
-        <div className="p-4 flex flex-col justify-between">
+        <div className="p-4 flex flex-col justify-between h-56">
           <div>
             <h1 className="text-white font-bold font-nunito text-xl tracking-normal -mb-[7px]">
               {properties?.title?.title[0]?.text?.content}

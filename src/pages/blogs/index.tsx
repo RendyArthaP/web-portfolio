@@ -10,12 +10,14 @@ import CardBlogs from "./components/CardBlogs";
 const Blogs: NextPage = ({
   getBlogs
 }: InferGetStaticPropsType<typeof getStaticProps>) => {
-
   return (
     <div className="flex flex-wrap mb-20 mx-4 sm:mx-0">
       {getBlogs.map((blog: BlogCards) => {
         return (
-          <div key={blog?.id}>
+          <div
+            key={blog?.id}
+            className="w-full sm:max-w-[288px] md:max-w-[255px] lg:max-w-[288px]"
+          >
             <CardBlogs properties={blog?.properties} />
           </div>
         )

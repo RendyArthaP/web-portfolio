@@ -12,10 +12,13 @@ const Portfolio: NextPage = ({
   getPortfolio
 }: InferGetStaticPropsType<typeof getStaticProps>) => {
   return (
-    <div>
+    <div className="flex flex-wrap mb-20 mx-4 sm:mx-0">
       {getPortfolio.map((portfolio: PortfolioCards) => {
         return (
-          <div key={portfolio?.id}>
+          <div
+            key={portfolio?.id}
+            className='w-full sm:max-w-[288px] md:max-w-[255px] lg:max-w-[288px]'
+          >
             <CardPortfolio properties={portfolio?.properties} />
           </div>
         )

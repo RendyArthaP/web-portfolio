@@ -11,6 +11,9 @@ export interface PortfolioCards {
         };
       };
     };
+    image_alt: {
+      url: string;
+    };
     description: {
       rich_text: {
         plain_text: string;
@@ -46,5 +49,10 @@ export interface PortfolioCards {
     tags: {
       multi_select: any[];
     };
+    date: {
+      date: {
+        start: string;
+      }
+    }
   };
 }
