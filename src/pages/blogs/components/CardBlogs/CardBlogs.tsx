@@ -7,13 +7,13 @@ const CardBlogs: FC<BlogCards> = ({
   properties
 }) => {
   return (
-    <div className="mx-4 my-8 border border-[#BFC0C0] rounded-lg">
-      <div className="flex flex-col sm:flex-row">
+    <div className="mx-4 my-8 bg-dark-blue border border-dark-blue rounded-lg w-full max-w-[280px]">
+      <div className="flex flex-col">
         <img
           src={properties?.images?.files[0]?.file?.url}
-          className="flex rounded-t-lg sm:rounded-lg sm:rounded-tr-none sm:rounded-br-none h-60 sm:max-w-[220px]"
+          className="flex rounded-tr-lg rounded-tl-lg h-48 object-cover"
         />
-        <div className="p-4 flex flex-col justify-between sm:h-60">
+        <div className="p-4 flex flex-col justify-between">
           <div>
             <h1 className="text-white font-bold font-nunito text-xl tracking-normal -mb-[7px]">
               {properties?.title?.title[0]?.text?.content}
@@ -22,10 +22,10 @@ const CardBlogs: FC<BlogCards> = ({
               {dayjs(properties?.dates?.date?.start).format('MMMM D, YYYY')}
             </span>
           </div>
-          <div className=''>
+          <div className='my-2'>
             {properties?.description?.rich_text.length > 0 && (
               <p className="text-grey font-poppins text-sm select-none">
-                {properties?.description?.rich_text[0]?.plain_text.slice(0,300)}...
+                {properties?.description?.rich_text[0]?.plain_text.slice(0,100)}...
               </p>
             )}
           </div>

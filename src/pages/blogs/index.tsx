@@ -12,9 +12,8 @@ const Blogs: NextPage = ({
 }: InferGetStaticPropsType<typeof getStaticProps>) => {
 
   return (
-    <div>
+    <div className="flex flex-wrap">
       {getBlogs.map((blog: BlogCards) => {
-        console.log(blog)
         return (
           <div key={blog?.id}>
             <CardBlogs properties={blog?.properties} />
