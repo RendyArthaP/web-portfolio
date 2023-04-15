@@ -12,13 +12,11 @@ function MyApp({ Component, pageProps }: AppProps) {
   useEffect(() => {
     Router.events.on("routeChangeStart", () => {
       setLoading(true);
-      console.log('Page start to change');
     })
 
     return(() => {
       Router.events.on("routeChangeComplete", () => {
         setLoading(false);
-        console.log('Page already change');
       })
     })
   })

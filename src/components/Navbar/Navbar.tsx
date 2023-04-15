@@ -7,7 +7,6 @@ import { useRouter } from "next/router";
 import { tabbarActive } from "~/src/utils/tabbarActive";
 import {
   activeHome,
-  activeAbout,
   activeBlogs,
   activePortfolio
 } from "~/src/constants/activeTabbar";
@@ -33,13 +32,6 @@ const Navbar = () => {
           classNameInactive="mx-4 font-normal cursor-pointer"
           active={tabbarActive(routerPath, activeHome)}
         />
-        {/* <NavbarItem
-          router="/about"
-          title="About"
-          classNameActive="mx-4 font-bold cursor-pointer"
-          classNameInactive="mx-4 font-normal cursor-pointer"
-          active={tabbarActive(routerPath, activeAbout)}
-        /> */}
         <NavbarItem
           router="/blogs"
           title="Blogs"

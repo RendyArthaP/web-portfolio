@@ -1,10 +1,8 @@
 import React, { FC, ReactNode } from "react";
 import HomeInactive from "~/public/icons/tabbar/inactive/home-inactive.svg";
-import AboutInactive from "~/public/icons/tabbar/inactive/about-inactive.svg";
 import BlogsInactive from "~/public/icons/tabbar/inactive/blogs-inactive.svg";
 import PortfolioInactive from "~/public/icons/tabbar/inactive/portfolio-inactive.svg";
 import HomeActivate from "~/public/icons/tabbar/active/home-active.svg";
-import AboutActivate from "~/public/icons/tabbar/active/about-active.svg";
 import BlogsActivate from "~/public/icons/tabbar/active/blogs-active.svg";
 import PortfolioActivate from "~/public/icons/tabbar/active/portfolio-active.svg";
 import { useRouter } from "next/router";
@@ -14,7 +12,6 @@ import TabbarItem from "../Tabbar/TabbarItem";
 import { tabbarActive } from "../../utils/tabbarActive";
 import {
   activeHome,
-  activeAbout,
   activeBlogs,
   activePortfolio,
 } from "../../constants/activeTabbar";
@@ -40,13 +37,6 @@ const Layout: FC<Props> = ({ children }) => {
               iconInactive={HomeInactive}
               router="/"
               title="Home"
-            />
-            <TabbarItem
-              active={tabbarActive(routerPath, activeAbout)}
-              iconActive={AboutActivate}
-              iconInactive={AboutInactive}
-              router="/about"
-              title="About"
             />
             <TabbarItem
               active={tabbarActive(routerPath, activeBlogs)}

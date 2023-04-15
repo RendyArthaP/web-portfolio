@@ -23,7 +23,7 @@ const BlogsDetail = ({
         <meta name={"og:description"} title={"og:description"} content={blogDetails?.properties?.description?.rich_text[0]?.text?.content}/>
       </Head>
       <article className='prose'>
-        <ReactMarkdown>
+        <ReactMarkdown className="mx-4">
           {markdown}
         </ReactMarkdown>
       </article>
