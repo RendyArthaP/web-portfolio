@@ -16,7 +16,7 @@ const Navbar = () => {
   const routerPath = router.pathname;
 
   return (
-    <div className="flex flex-row items-center justify-between p-4 mt-6 mx-auto max-w-6xl">
+    <div className="flex flex-row items-center justify-between p-4 mt-2 mx-auto max-w-6xl">
       <div>
         <Link href="/">
           <a className="outline-none">
