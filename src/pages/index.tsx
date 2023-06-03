@@ -9,11 +9,15 @@ import Instagram from "~/public/icons/instagram.svg";
 import UpWork from "~/public/icons/upwork.svg";
 import Youtube from "~/public/icons/youtube.svg";
 import Discord from "~/public/icons/discord.svg";
+import WebAppIcon from "~/public/icons/web-apps.svg";
+import CoachingMentoring from "~/public/icons/coaching-mentoring.svg";
+import Community from "~/public/icons/community.svg";
 
 const Home: NextPage = () => {
   return (
-    <div className="mx-4 lg:mt-16">
-      <div className="flex flex-col-reverse justify-between items-center lg:flex-row">
+    <div className="m-4">
+      {/** Opening Section */}
+      <div className="lg:mt-16 flex flex-col-reverse justify-between items-center lg:flex-row">
         <div>
           <h1 className="font-bold text-lg lg:text-[28px]">
             Hi, I’m Rendy Artha Prawira
@@ -79,6 +83,46 @@ const Home: NextPage = () => {
           unoptimized={true}
         />
       </div>
+      {/** End Opening Section */}
+
+      {/** Our Service Section */}
+      <div className="mt-[70px] mb-[80px]">
+        <h1>Our Service</h1>
+        <div className="flex flex-col lg:flex-row lg:justify-between">
+          <div className="bg-dark-blue my-3 rounded-md p-5 flex flex-col lg:max-w-[200px]">
+            <Image src={WebAppIcon} alt="web-app" />
+            <h1 className="my-[10px] font-bold text-base">
+              Web/App Design & Development
+            </h1>
+            <p className="text-sm">
+              Create web or apps for what you needed, because in this digital
+              era, every business or things need a website or apps to make
+              easier their process.
+            </p>
+          </div>
+          <div className="bg-dark-blue my-3 rounded-md p-5 flex flex-col lg:max-w-[200px]">
+            <Image src={CoachingMentoring} alt="web-app" />
+            <h1 className="my-[10px] font-bold text-base">
+              Coaching & Mentoring
+            </h1>
+            <p className="text-sm">
+              Sharing my journey and my knowledge for the others, and help them
+              to grow to survive for professional career in the real world.
+            </p>
+          </div>
+          <div className="bg-dark-blue my-3 rounded-md p-5 flex flex-col lg:max-w-[200px]">
+            <Image src={Community} alt="web-app" />
+            <h1 className="my-[10px] font-bold text-base">
+              Community For Growing Together
+            </h1>
+            <p className="text-sm">
+              I served you my community to learn together to achieved your own
+              goal, because everyone need others people to grow.
+            </p>
+          </div>
+        </div>
+      </div>
+      {/** End Our Service Section */}
     </div>
   );
 };
