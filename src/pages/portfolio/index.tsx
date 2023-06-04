@@ -1,15 +1,11 @@
-import {
-  GetStaticProps,
-  InferGetStaticPropsType,
-  NextPage
-} from "next";
+import { GetStaticProps, InferGetStaticPropsType, NextPage } from "next";
 import React from "react";
 import { getPublishedPortfolio } from "~/src/services/notionService";
 import CardPortfolio from "./components/CardPortfolio";
 import { PortfolioCards } from "./types/portfoliocard";
 
 const Portfolio: NextPage = ({
-  getPortfolio
+  getPortfolio,
 }: InferGetStaticPropsType<typeof getStaticProps>) => {
   return (
     <div className="flex flex-wrap mb-20 mx-4 sm:mx-0">
@@ -17,11 +13,11 @@ const Portfolio: NextPage = ({
         return (
           <div
             key={portfolio?.id}
-            className='w-full sm:max-w-[288px] md:max-w-[255px] lg:max-w-[288px]'
+            className="w-full sm:max-w-[288px] md:max-w-[255px] lg:max-w-[288px]"
           >
             <CardPortfolio properties={portfolio?.properties} />
           </div>
-        )
+        );
       })}
     </div>
   );
@@ -32,9 +28,9 @@ export const getStaticProps: GetStaticProps = async () => {
 
   return {
     props: {
-      getPortfolio
-    }
-  }
-}
+      getPortfolio,
+    },
+  };
+};
 
 export default Portfolio;
