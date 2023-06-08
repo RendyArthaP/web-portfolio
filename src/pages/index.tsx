@@ -89,7 +89,7 @@ const Home: NextPage = () => {
       <div className="mt-[70px] mb-[80px]">
         <h1 className="font-bold text-base mb-2 lg:text-[22px]">Our Service</h1>
         <div className="flex flex-col lg:flex-row lg:justify-between">
-          <div className="bg-dark-blue my-3 rounded-md p-5 flex flex-col lg:max-w-[200px]">
+          <div className="bg-dark-blue my-3 rounded-md p-5 flex flex-col lg:max-w-[320px]">
             <Image src={WebAppIcon} alt="web-app" />
             <h1 className="my-[10px] font-bold text-base">
               Web/App Design & Development
@@ -100,7 +100,7 @@ const Home: NextPage = () => {
               easier their process.
             </p>
           </div>
-          <div className="bg-dark-blue my-3 rounded-md p-5 flex flex-col lg:max-w-[200px]">
+          <div className="bg-dark-blue my-3 rounded-md p-5 flex flex-col lg:max-w-[320px]">
             <Image src={CoachingMentoring} alt="web-app" />
             <h1 className="my-[10px] font-bold text-base">
               Coaching & Mentoring
@@ -110,7 +110,7 @@ const Home: NextPage = () => {
               to grow to survive for professional career in the real world.
             </p>
           </div>
-          <div className="bg-dark-blue my-3 rounded-md p-5 flex flex-col lg:max-w-[200px]">
+          <div className="bg-dark-blue my-3 rounded-md p-5 flex flex-col lg:max-w-[320px]">
             <Image src={Community} alt="web-app" />
             <h1 className="my-[10px] font-bold text-base">
               Community For Growing Together

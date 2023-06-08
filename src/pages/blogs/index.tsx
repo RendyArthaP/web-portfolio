@@ -7,18 +7,16 @@ import BackButton from "~/src/components/BackButton";
 const Blogs: NextPage = ({
   getBlogs,
 }: InferGetStaticPropsType<typeof getStaticProps>) => {
+  console.log(getBlogs);
   return (
-    <div className="mx-4">
+    <div>
       <BackButton />
       <div>
         {getBlogs?.length > 0 ? (
-          <div className="flex flex-wrap mb-20">
-            {getBlogs.map((blog: BlogCards) => {
+          <div className="flex flex-col m-4">
+            {getBlogs?.map((blog: BlogCards) => {
               return (
-                <div
-                  key={blog?.id}
-                  className="w-full sm:max-w-[288px] md:max-w-[255px] lg:max-w-[288px]"
-                >
+                <div key={blog?.id} className="mt-2 mb-4">
                   <CardBlogs properties={blog?.properties} />
                 </div>
               );

@@ -1,43 +1,37 @@
-import dayjs from 'dayjs'
-import Link from 'next/link'
-import React, { FC } from 'react'
+import dayjs from "dayjs";
+import Link from "next/link";
+import React, { FC } from "react";
 import { BlogCards } from "~/src/pages/blogs/types/blogcard";
+import IconDate from "~/public/icons/icon-date.svg";
+import Image from "next/image";
 
-const CardBlogs: FC<BlogCards> = ({
-  properties
-}) => {
+const CardBlogs: FC<BlogCards> = ({ properties }) => {
   return (
-    <div className="sm:mx-4 my-8 bg-dark-blue border border-dark-blue rounded-lg h-[26.5rem]">
-      <div className="flex flex-col">
+    <div className="transition duration-300 ease-in-out hover:scale-80  rounded-md border-[#BFC0C0] border min-h-[150px] cursor-pointer ">
+      <div className="flex flex-row">
         <img
-          src={properties?.images?.files[0]?.file?.url}
-          className="flex rounded-tr-lg rounded-tl-lg h-48 object-cover w-full"
+          src={String(properties?.images?.files[0]?.file?.url)}
+          alt="img-blogs"
+          className="rounded-tl-md rounded-bl-md w-[150px] min-h-[150px] object-cover hidden sm:flex"
         />
-        <div className="p-4 flex flex-col justify-between h-56">
-          <div>
-            <h1 className="text-white font-bold font-nunito text-xl tracking-normal -mb-[7px]">
-              {properties?.title?.title[0]?.text?.content}
-            </h1>
-            <span className="text-grey font-poppins text-xs mb-1">
-              {dayjs(properties?.dates?.date?.start).format('MMMM D, YYYY')}
+        <div className="p-5">
+          <h1 className="text-base font-bold">
+            {properties?.title?.title[0]?.text?.content}
+          </h1>
+          <div className="flex flex-row items-center mt-1 mb-3">
+            <Image src={IconDate} alt="icon-date" />
+            <span className="text-xs font-normal ml-2">
+              {dayjs(properties?.dates?.date?.start).format("MMMM D, YYYY")}
             </span>
           </div>
-          <div className='my-2'>
-            {properties?.description?.rich_text.length > 0 && (
-              <p className="text-grey font-poppins text-sm select-none">
-                {properties?.description?.rich_text[0]?.plain_text.slice(0,100)}...
-              </p>
-            )}
-          </div>
-          <Link href={`/blogs/${properties?.slug?.formula?.string}`}>
-            <a className="text-white font-normal mt-1 tracking-tight outline-none w-28">
-              Read More {">>"}
-            </a>
-          </Link>
+          <article className="text-sm font-normal">
+            {properties?.description?.rich_text[0]?.plain_text.slice(0, 100)} .
+            . .
+          </article>
         </div>
       </div>
     </div>
-  )
-}
+  );
+};
 
-export default CardBlogs
+export default CardBlogs;

@@ -9,7 +9,10 @@ const BackButton = () => {
     return router.back();
   };
   return (
-    <div onClick={goBack} className="flex flex-row items-center">
+    <div
+      onClick={goBack}
+      className="cursor-pointer mx-4 flex flex-row items-center"
+    >
       <Image src={BackbuttonIMG} alt="back-button" />
       <p className="text-base ml-3">Back</p>
     </div>

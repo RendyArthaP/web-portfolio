@@ -8,6 +8,7 @@ import {
 import ReactMarkdown from "react-markdown";
 import Head from "next/head";
 import { BlogCards } from "./types/blogcard";
+import BackButton from "~/src/components/BackButton";
 
 interface IParams extends ParsedUrlQuery {
   slug: string;
@@ -45,6 +46,7 @@ const BlogsDetail = ({
         />
       </Head>
       <article className="prose">
+        <BackButton />
         <ReactMarkdown className="mx-4">{markdown?.parent}</ReactMarkdown>
       </article>
     </div>
@@ -59,8 +61,8 @@ export const getStaticProps: GetStaticProps = async (context) => {
 
   return {
     props: {
-      markdown: data.markdown,
-      blogDetails: data.detailBlogsPages,
+      markdown: data?.markdown,
+      blogDetails: data?.detailBlogsPages,
     },
   };
 };

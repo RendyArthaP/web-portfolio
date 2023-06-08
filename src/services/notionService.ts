@@ -27,7 +27,7 @@ export const getPublishedBlogs = async () => {
     },
   });
 
-  return response.results;
+  return response?.results;
 };
 
 export const getPublishedPortfolio = async () => {
@@ -41,7 +41,7 @@ export const getPublishedPortfolio = async () => {
     },
   });
 
-  return response.results;
+  return response?.results;
 };
 
 export const getPublishedDetailBlogs = async (slug: string) => {
@@ -56,6 +56,7 @@ export const getPublishedDetailBlogs = async (slug: string) => {
       },
     },
   });
+
   const detailBlogsPages = response.results[0];
   const markdownBlocks = await blocksMarkdown.pageToMarkdown(
     detailBlogsPages?.id,
