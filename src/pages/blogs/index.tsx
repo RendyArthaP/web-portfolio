@@ -2,14 +2,14 @@ import { GetStaticProps, InferGetStaticPropsType, NextPage } from "next";
 import { getPublishedBlogs } from "~/src/services/notionService";
 import { BlogCards } from "~/src/pages/blogs/types/blogcard";
 import CardBlogs from "./components/CardBlogs";
-import BackButton from "~/src/components/BackButton";
+import BackAndSearch from "~/src/components/BackAndSearch";
 
 const Blogs: NextPage = ({
   getBlogs,
 }: InferGetStaticPropsType<typeof getStaticProps>) => {
   return (
     <div>
-      <BackButton />
+      <BackAndSearch />
       <div>
         {getBlogs?.length > 0 ? (
           <div className="flex flex-col m-4">

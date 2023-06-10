@@ -8,7 +8,7 @@ import {
 import ReactMarkdown from "react-markdown";
 import Head from "next/head";
 import { BlogCards } from "./types/blogcard";
-import BackButton from "~/src/components/BackButton";
+import BackButton from "~/src/components/BackAndSearch";
 
 interface IParams extends ParsedUrlQuery {
   slug: string;

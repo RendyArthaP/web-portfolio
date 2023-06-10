@@ -3,7 +3,8 @@ import { useRouter } from "next/router";
 import React from "react";
 import BackbuttonIMG from "~/public/icons/back-button.svg";
 
-const BackButton = () => {
+/** Will Developt Search Bar and Search Anything Laters */
+const BackAndSearch = () => {
   const router = useRouter();
   const goBack = () => {
     return router.back();
@@ -19,4 +20,4 @@ const BackButton = () => {
   );
 };
 
-export default BackButton;
+export default BackAndSearch;

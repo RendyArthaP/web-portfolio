@@ -4,7 +4,7 @@ import { PortfolioCards } from "../types/portfoliocard";
 
 const CardPortfolio: FC<PortfolioCards> = ({ properties }) => {
   return (
-    <div className="sm:mx-4 my-8 bg-dark-blue border border-dark-blue rounded-lg h-[26.5rem]">
+    <div className="sm:mx-4 mt-4 bg-dark-blue border border-dark-blue rounded-lg h-[26.5rem]">
       <div className="flex flex-col">
         <img
           src={properties?.image_alt?.url}

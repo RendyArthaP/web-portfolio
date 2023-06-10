@@ -3,22 +3,26 @@ import React from "react";
 import { getPublishedPortfolio } from "~/src/services/notionService";
 import CardPortfolio from "./components/CardPortfolio";
 import { PortfolioCards } from "./types/portfoliocard";
+import BackAndSearch from "~/src/components/BackAndSearch/BackAndSearch";
 
 const Portfolio: NextPage = ({
   getPortfolio,
 }: InferGetStaticPropsType<typeof getStaticProps>) => {
   return (
-    <div className="flex flex-wrap mb-20 mx-4 sm:mx-0">
-      {getPortfolio.map((portfolio: PortfolioCards) => {
-        return (
-          <div
-            key={portfolio?.id}
-            className="w-full sm:max-w-[288px] md:max-w-[255px] lg:max-w-[288px]"
-          >
-            <CardPortfolio properties={portfolio?.properties} />
-          </div>
-        );
-      })}
+    <div>
+      <BackAndSearch />
+      <div className="flex flex-wrap mb-20 mx-4 sm:mx-0">
+        {getPortfolio.map((portfolio: PortfolioCards) => {
+          return (
+            <div
+              key={portfolio?.id}
+              className="w-full sm:max-w-[288px] md:max-w-[255px] lg:max-w-[288px]"
+            >
+              <CardPortfolio properties={portfolio?.properties} />
+            </div>
+          );
+        })}
+      </div>
     </div>
   );
 };
