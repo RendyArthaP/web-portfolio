@@ -10,25 +10,23 @@ const Blogs: NextPage = ({
   return (
     <div>
       <BackAndSearch />
-      <div>
-        {getBlogs?.length > 0 ? (
-          <div className="flex flex-col m-4">
-            {getBlogs?.map((blog: BlogCards) => {
-              return (
-                <div key={blog?.id} className="mt-2 mb-4">
-                  <CardBlogs properties={blog?.properties} />
-                </div>
-              );
-            })}
-          </div>
-        ) : (
-          <div className="flex h-screen text-center justify-center items-center">
-            <h1 className="font-bold text-base">
-              The Blogs Section is Empty. Please Wait the Author To Input...
-            </h1>
-          </div>
-        )}
-      </div>
+      {getBlogs?.length > 0 ? (
+        <div className="flex flex-col m-4">
+          {getBlogs?.map((blog: BlogCards) => {
+            return (
+              <div key={blog?.id} className="mt-2 mb-4">
+                <CardBlogs properties={blog?.properties} />
+              </div>
+            );
+          })}
+        </div>
+      ) : (
+        <div className="flex h-screen text-center justify-center items-center">
+          <h1 className="font-bold text-base">
+            The Blogs Section is Empty. Please Wait the Author To Input...
+          </h1>
+        </div>
+      )}
     </div>
   );
 };

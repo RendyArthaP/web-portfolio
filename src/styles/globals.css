@@ -3,9 +3,9 @@
 @tailwind utilities;
 
 body {
-  background-color: #2D3142;
-  font-family: 'Poppins', sans-serif;
-  color: #BFC0C0;
+  background-color: #2d3142;
+  font-family: "Poppins", sans-serif;
+  color: #bfc0c0;
   margin: 0;
   padding: 0;
   height: 100%;
@@ -18,12 +18,12 @@ main {
   min-height: 100vh;
   margin: auto;
   max-width: 1152px;
-  overflow:hidden;
+  overflow: hidden;
 }
 
 h1 h2 h3 h4 h5 h6 {
-  font-family: 'Nunito', sans-serif;
-  color: #FFFFFF;
+  font-family: "Nunito", sans-serif;
+  color: #ffffff;
   margin: 0px;
 }
 
@@ -36,28 +36,28 @@ h1 h2 h3 h4 h5 h6 {
 }
 
 .prose h1 {
-  color: #FFFFFF;
-  font-family: 'Nunito', sans-serif;
+  color: #ffffff;
+  font-family: "Nunito", sans-serif;
   font-weight: 800;
-  font-size: 2.0em;
-  margin-top: 0;
-  margin-bottom: 0.8888889em;
+  font-size: 2em;
+  margin-top: 1em;
+  margin-bottom: 0;
   line-height: 1.1111111;
 }
 
 .prose h2 {
-  color: #FFFFFF;
-  font-family: 'Nunito', sans-serif;
+  color: #ffffff;
+  font-family: "Nunito", sans-serif;
   font-weight: 700;
   font-size: 1.5em;
-  margin-top: 2em;
-  margin-bottom: 1em;
+  margin-top: 1em;
+  margin-bottom: 0em;
   line-height: 1.3333333;
 }
 
 .prose p {
-  color: #BFC0C0;
-  font-family: 'Poppins', sans-serif;
+  color: #bfc0c0;
+  font-family: "Poppins", sans-serif;
   margin-top: 1.25em;
   margin-bottom: 1.25em;
 }
@@ -81,7 +81,7 @@ h1 h2 h3 h4 h5 h6 {
 }
 
 .prose pre {
-  color: #BFC0C0;
+  color: #bfc0c0;
   background-color: #252734;
   overflow-x: auto;
   font-weight: 400;
@@ -96,14 +96,26 @@ h1 h2 h3 h4 h5 h6 {
   padding-left: 1.1428571em;
 }
 
-.prose pre code {
-  background-color: transparent;
+.prose code {
+  background-color: #252734;
   border-width: 0;
   border-radius: 0;
-  padding: 0;
+  padding: 3px;
   font-weight: inherit;
-  color: inherit;
+  color: #ef8354;
   font-size: inherit;
   font-family: inherit;
   line-height: inherit;
+}
+
+.prose code::before {
+  content: "";
+}
+
+.prose code::after {
+  content: "";
+}
+
+.prose li {
+  color: #bfc0c0;
 }

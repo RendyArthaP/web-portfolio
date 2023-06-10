@@ -11,18 +11,26 @@ const Portfolio: NextPage = ({
   return (
     <div>
       <BackAndSearch />
-      <div className="flex flex-wrap mb-20 mx-4 sm:mx-0">
-        {getPortfolio.map((portfolio: PortfolioCards) => {
-          return (
-            <div
-              key={portfolio?.id}
-              className="w-full sm:max-w-[288px] md:max-w-[255px] lg:max-w-[288px]"
-            >
-              <CardPortfolio properties={portfolio?.properties} />
-            </div>
-          );
-        })}
-      </div>
+      {getPortfolio?.length > 0 ? (
+        <div className="flex flex-wrap mb-20 mx-4 sm:mx-0">
+          {getPortfolio?.map((portfolio: PortfolioCards) => {
+            return (
+              <div
+                key={portfolio?.id}
+                className="w-full sm:max-w-[288px] md:max-w-[255px] lg:max-w-[288px]"
+              >
+                <CardPortfolio properties={portfolio?.properties} />
+              </div>
+            );
+          })}
+        </div>
+      ) : (
+        <div className="flex h-screen text-center justify-center items-center">
+          <h1 className="font-bold text-base">
+            The Portofolio Section is Empty. Please Wait the Author To Input...
+          </h1>
+        </div>
+      )}
     </div>
   );
 };
