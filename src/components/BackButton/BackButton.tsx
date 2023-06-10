@@ -11,7 +11,7 @@ const BackButton = () => {
   return (
     <div
       onClick={goBack}
-      className="cursor-pointer mx-4 flex flex-row items-center"
+      className="cursor-pointer mx-4 flex flex-row items-center w-[75px]"
     >
       <Image src={BackbuttonIMG} alt="back-button" />
       <p className="text-base ml-3">Back</p>

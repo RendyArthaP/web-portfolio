@@ -7,7 +7,6 @@ import BackButton from "~/src/components/BackButton";
 const Blogs: NextPage = ({
   getBlogs,
 }: InferGetStaticPropsType<typeof getStaticProps>) => {
-  console.log(getBlogs);
   return (
     <div>
       <BackButton />

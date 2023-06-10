@@ -38,37 +38,37 @@ const Home: NextPage = () => {
             <StackTransition />
           </div>
           <div className="w-full lg:max-w-[295px]">
-            <button className="bg-light-orange rounded-md p-2 text-white mt-5 w-full lg:max-w-[295px]">
+            <button className="bg-light-orange  rounded-md p-2 text-white mt-5 w-full lg:max-w-[295px] hover:text-light-orange hover:bg-white duration-300">
               Hire Me!
             </button>
             <div className="mt-5 flex flex-row justify-between">
               <Link href="/">
-                <a className="mr-5">
+                <a className="mr-5 hover:scale-125 duration-300">
                   <Image src={Github} alt="github" />
                 </a>
               </Link>
               <Link href="/">
-                <a className="mr-5">
+                <a className="mr-5 hover:scale-125 duration-300">
                   <Image src={Linkedin} alt="linkedin" />
                 </a>
               </Link>
               <Link href="/">
-                <a className="mr-5">
+                <a className="mr-5 hover:scale-125 duration-300">
                   <Image src={Instagram} alt="instagram" />
                 </a>
               </Link>
               <Link href="/">
-                <a className="mr-5">
+                <a className="mr-5 hover:scale-125 duration-300">
                   <Image src={UpWork} alt="upwork" />
                 </a>
               </Link>
               <Link href="/">
-                <a className="mr-5">
+                <a className="mr-5 hover:scale-125 duration-300">
                   <Image src={Youtube} alt="youtube" />
                 </a>
               </Link>
               <Link href="/">
-                <a>
+                <a className="hover:scale-125 duration-300">
                   <Image src={Discord} alt="discord" />
                 </a>
               </Link>
