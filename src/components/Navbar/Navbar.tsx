@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import Link from "next/link";
 import Image from "next/image";
 import Logo from "~/public/Logo.png";
@@ -8,22 +8,28 @@ import { tabbarActive } from "~/src/utils/tabbarActive";
 import {
   activeHome,
   activeBlogs,
-  activePortfolio
+  activePortfolio,
 } from "~/src/constants/activeTabbar";
+import HamburgerMenu from "~/public/icons/hamburger-menu.svg";
+import NavbarMobile from "./NavbarMobile";
 
 const Navbar = () => {
   const router = useRouter();
   const routerPath = router.pathname;
 
+  const [showNavbarMobile, setShowNavbarMobile] = useState(false);
+
+  const handleOpenNavbarMobile = () => {
+    setShowNavbarMobile(!showNavbarMobile);
+  };
+
   return (
     <div className="flex flex-row items-center justify-between p-4 mt-2 mx-auto max-w-6xl">
-      <div>
-        <Link href="/">
-          <a className="outline-none">
-            <Image alt="Logo" height={45} src={Logo} width={45} />
-          </a>
-        </Link>
-      </div>
+      <Link href="/">
+        <a className="outline-none">
+          <Image alt="Logo" height={45} src={Logo} width={45} />
+        </a>
+      </Link>
       <div className="hidden md:flex md:flex-row">
         <NavbarItem
           router="/"
@@ -47,6 +53,19 @@ const Navbar = () => {
           active={tabbarActive(routerPath, activePortfolio)}
         />
       </div>
+      <div className="flex md:hidden cursor-pointer">
+        <Image
+          src={HamburgerMenu}
+          alt="hamburger-menu"
+          onClick={handleOpenNavbarMobile}
+        />
+      </div>
+      {showNavbarMobile && (
+        <NavbarMobile
+          onClose={() => setShowNavbarMobile(false)}
+          showNavbar={showNavbarMobile}
+        />
+      )}
     </div>
   );
 };

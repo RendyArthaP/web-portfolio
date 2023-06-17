@@ -5,6 +5,7 @@ import Layout from "../components/layout/Layout";
 import Router from "next/router";
 import { useEffect, useState } from "react";
 import Loader from "../components/Loader";
+import NavbarMobile from "../components/Navbar/NavbarMobile";
 
 function MyApp({ Component, pageProps }: AppProps) {
   const [loading, setLoading] = useState(false);
@@ -12,14 +13,14 @@ function MyApp({ Component, pageProps }: AppProps) {
   useEffect(() => {
     Router.events.on("routeChangeStart", () => {
       setLoading(true);
-    })
+    });
 
-    return(() => {
+    return () => {
       Router.events.on("routeChangeComplete", () => {
         setLoading(false);
-      })
-    })
-  })
+      });
+    };
+  });
 
   return (
     <>

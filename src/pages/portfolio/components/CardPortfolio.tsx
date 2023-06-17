@@ -31,7 +31,7 @@ const CardPortfolio: FC<PortfolioCards> = ({ properties }) => {
             )}
           </div>
           <a
-            className="text-white font-normal tracking-tight outline-none bg-light-orange cursor-pointer w-full text-center py-1 rounded-md"
+            className="text-white font-normal tracking-tight outline-none bg-light-orange cursor-pointer w-full text-center py-1 rounded-md hover:text-light-orange hover:bg-white duration-300"
             href={properties?.link?.url}
             target="_blank"
             rel="noopener noreferrer"
