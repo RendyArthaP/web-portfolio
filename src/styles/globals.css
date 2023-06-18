@@ -123,3 +123,43 @@ h1 h2 h3 h4 h5 h6 {
 .prose li {
   color: #bfc0c0;
 }
+
+.navbar-mask-style {
+  background-color: #000000;
+  position: fixed;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  z-index: 20;
+  opacity: 0;
+  width: 100%;
+  height: 0;
+  transition: opacity 0.3s cubic-bezier(0.445, 0.05, 0.55, 0.95);
+}
+
+.navbar-mask-style.open {
+  height: 100vh;
+  opacity: 0.4;
+}
+
+.navbar-style {
+  background-color: #252734;
+  position: fixed;
+  width: 100%;
+  z-index: 50;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  padding: 16px;
+  border-top-right-radius: 12px;
+  border-top-left-radius: 12px;
+  height: 0;
+  visibility: hidden;
+  transition: height 0.3s cubic-bezier(0.445, 0.05, 0.55, 0.95);
+}
+
+.navbar-style.open {
+  visibility: visible;
+  height: 320px;
+}

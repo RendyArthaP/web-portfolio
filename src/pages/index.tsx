@@ -86,7 +86,7 @@ const Home: NextPage = () => {
       {/** End Opening Section */}
 
       {/** Our Service Section */}
-      <div className="mt-[70px] mb-[80px]">
+      <div className="mt-[70px]">
         <h1 className="font-bold text-base mb-2 lg:text-[22px]">Our Service</h1>
         <div className="flex flex-col lg:flex-row lg:justify-between">
           <div className="bg-dark-blue my-3 rounded-md p-5 flex flex-col lg:max-w-[320px]">

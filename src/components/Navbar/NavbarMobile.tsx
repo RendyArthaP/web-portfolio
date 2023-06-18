@@ -4,6 +4,8 @@ import React, { FC, useEffect } from "react";
 import Home from "~/public/icons/home.svg";
 import Blogs from "~/public/icons/blogs.svg";
 import Portfolio from "~/public/icons/portfolio.svg";
+import Close from "~/public/icons/close.svg";
+import ReactDOM from "react-dom";
 
 interface Props {
   onClose: () => void;
@@ -11,14 +13,6 @@ interface Props {
 }
 
 const NavbarMobile: FC<Props> = ({ onClose, showNavbar }) => {
-  const styleShowNavbar = `
-    flex md:hidden bg-black fixed z-20 w-full h-screen bottom-0 overflow-hidden right-0 top-0 left-0 opacity-40
-  `;
-
-  const styleCloseNavbar = `
-    flex md:hidden bg-black fixed z-20 w-full h-screen bottom-0 overflow-hidden right-0 top-0 left-0 opacity-40
-  `;
-
   // This useEffect function for locking scroll when Navbar Mobile Open
   useEffect(() => {
     if (showNavbar) {
@@ -32,14 +26,21 @@ const NavbarMobile: FC<Props> = ({ onClose, showNavbar }) => {
 
   return (
     <>
+      {/** Background Modal Navbar */}
       <div
-        className={showNavbar ? styleShowNavbar : styleCloseNavbar}
+        className={`navbar-mask-style ${showNavbar ? "open" : "close"}`}
         onClick={onClose}
       />
-      <div className="flex md:hidden bg-dark-blue flex-col fixed w-screen bottom-0 h-80 z-50 left-0 right-0 p-4 rounded-tr-xl rounded-tl-xl">
+      {/** End Background Modal Navbar */}
+
+      {/** Modal Navbar */}
+      <div className={`navbar-style ${showNavbar ? "open" : "close"}`}>
+        <div className="pb-7 flex justify-end">
+          <Image src={Close} alt="close-icon" onClick={onClose} />
+        </div>
         <div className="border-b border-grey">
           <Link href="/">
-            <a className="outline-none flex flex-row items-center py-4">
+            <a className="outline-none flex flex-row items-center pb-4">
               <p className="text-lg tracking-wide mr-2">Home</p>
               <Image src={Home} alt="home" />
             </a>
@@ -62,6 +63,7 @@ const NavbarMobile: FC<Props> = ({ onClose, showNavbar }) => {
           </Link>
         </div>
       </div>
+      {/** End Modal Navbar */}
     </>
   );
 };

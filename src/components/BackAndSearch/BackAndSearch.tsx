@@ -12,7 +12,7 @@ const BackAndSearch = () => {
   return (
     <div
       onClick={goBack}
-      className="h-[30px] cursor-pointer mx-4 flex flex-row items-center w-[75px]"
+      className="h-[30px] cursor-pointer mx-4 flex flex-row items-center w-[75px] outline-none"
     >
       <Image src={BackbuttonIMG} alt="back-button" />
       <p className="text-base ml-3">Back</p>
