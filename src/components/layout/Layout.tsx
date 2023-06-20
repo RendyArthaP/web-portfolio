@@ -9,7 +9,7 @@ interface Props {
 const Layout: FC<Props> = ({ children }) => {
   return (
     <>
-      <header>
+      <header className="fadedown-animation">
         <Navbar />
       </header>
       <Container>{children}</Container>

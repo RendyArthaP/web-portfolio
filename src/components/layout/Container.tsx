@@ -5,7 +5,7 @@ interface Props {
 }
 
 const Container: FC<Props> = ({ children }) => {
-  return <main>{children}</main>;
+  return <main className="fadeup-animation">{children}</main>;
 };
 
 export default Container;
