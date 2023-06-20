@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import Link from "next/link";
 import Image from "next/image";
-import Logo from "~/public/Logo.png";
+import Logo from "~/public/Logo.svg";
 import NavbarItem from "./NavbarItem";
 import { useRouter } from "next/router";
 import { tabbarActive } from "~/src/utils/tabbarActive";
