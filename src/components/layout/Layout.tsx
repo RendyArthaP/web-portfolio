@@ -13,7 +13,7 @@ const Layout: FC<Props> = ({ children }) => {
         <Navbar />
       </header>
       <Container>{children}</Container>
-      <footer className="text-center p-4 bg-dark-blue mt-4">
+      <footer className="text-center p-4 bg-dark-blue mt-4 fadedown-animation text-sm">
         Copyright @ 2023 - Developed by Rendy Artha Prawira
       </footer>
     </>

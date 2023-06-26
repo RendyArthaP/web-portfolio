@@ -3,7 +3,11 @@ const nextConfig = {
   reactStrictMode: true,
   images: {
     unoptimized: true,
-    domains: ["s3.us-west-2.amazonaws.com", "https://res.cloudinary.com/"],
+    domains: [
+      "s3.us-west-2.amazonaws.com",
+      "https://res.cloudinary.com/",
+      "https://wa.me/",
+    ],
   },
 };
 

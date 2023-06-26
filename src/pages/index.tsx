@@ -12,6 +12,7 @@ import Discord from "~/public/icons/discord.svg";
 import WebAppIcon from "~/public/icons/web-apps.svg";
 import CoachingMentoring from "~/public/icons/coaching-mentoring.svg";
 import Community from "~/public/icons/community.svg";
+import { converterMessage, textMsg } from "../utils/converterWAMessage";
 
 const Home: NextPage = () => {
   return (
@@ -38,40 +39,54 @@ const Home: NextPage = () => {
             <StackTransition />
           </div>
           <div className="w-full lg:max-w-[295px]">
-            <button className="bg-light-orange  rounded-md p-2 text-white mt-5 w-full lg:max-w-[295px] hover:text-light-orange hover:bg-white duration-300">
-              Hire Me!
-            </button>
-            <div className="mt-5 flex flex-row justify-between">
-              <Link href="/">
-                <a className="mr-5 hover:scale-125 duration-300">
-                  <Image src={Github} alt="github" />
-                </a>
-              </Link>
-              <Link href="/">
-                <a className="mr-5 hover:scale-125 duration-300">
-                  <Image src={Linkedin} alt="linkedin" />
-                </a>
-              </Link>
-              <Link href="/">
-                <a className="mr-5 hover:scale-125 duration-300">
-                  <Image src={Instagram} alt="instagram" />
-                </a>
-              </Link>
-              <Link href="/">
-                <a className="mr-5 hover:scale-125 duration-300">
-                  <Image src={UpWork} alt="upwork" />
-                </a>
-              </Link>
-              <Link href="/">
-                <a className="mr-5 hover:scale-125 duration-300">
-                  <Image src={Youtube} alt="youtube" />
-                </a>
-              </Link>
-              <Link href="/">
-                <a className="hover:scale-125 duration-300">
-                  <Image src={Discord} alt="discord" />
-                </a>
-              </Link>
+            <a
+              target="_blank"
+              href={`https://wa.me/+6281318979935?text=${converterMessage(
+                textMsg,
+              )}`}
+              rel="noopener noreferrer"
+            >
+              <div className="bg-light-orange cursor-pointer text-center rounded-md p-2 text-white mt-5 w-full lg:max-w-[295px] hover:text-light-orange hover:bg-white duration-300">
+                Hire Me!
+              </div>
+            </a>
+            <div className="mt-5 flex flex-row">
+              <a
+                className="mr-4 hover:scale-125 duration-300"
+                target="_blank"
+                rel="noopener noreferrer"
+                href="https://github.com/RendyArthaP"
+              >
+                <Image src={Github} alt="github" />
+              </a>
+              <a
+                className="mr-5 hover:scale-125 duration-300"
+                href="https://www.linkedin.com/in/rendyarthap/"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <Image src={Linkedin} alt="linkedin" />
+              </a>
+              {/** Hide */}
+              <a className="mr-5 hover:scale-125 duration-300 hidden">
+                <Image src={Instagram} alt="instagram" />
+              </a>
+              <a
+                className="mr-5 hover:scale-125 duration-300"
+                target="_blank"
+                rel="noopener noreferrer"
+                href="https://www.upwork.com/freelancers/~01099d0dec85549e1e"
+              >
+                <Image src={UpWork} alt="upwork" />
+              </a>
+              {/** Hide */}
+              <a className="mr-5 hover:scale-125 duration-300 hidden">
+                <Image src={Youtube} alt="youtube" />
+              </a>
+              {/** Hide */}
+              <a className="hover:scale-125 duration-300 hidden">
+                <Image src={Discord} alt="discord" />
+              </a>
             </div>
           </div>
         </div>
